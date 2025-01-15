@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideBar from '../components/sidebar'
 import DashboardBody from '../components/dashboardBody'
 
 function Home() {
 
+  const [tab, setTab] = useState("balance")
+
 
   return (
-    <div className=''>
+    <div className='flex'>
         <SideBar />
-        <DashboardBody />
+        <DashboardBody tab={tab}/>
     </div>
   )
 
