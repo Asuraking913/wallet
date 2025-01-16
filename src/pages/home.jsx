@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className='flex'>
-        <SideBar />
+        <SideBar tab={tab} onTab={setTab}/>
         <DashboardBody tab={tab}/>
     </div>
   )

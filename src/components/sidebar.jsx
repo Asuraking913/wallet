@@ -2,29 +2,39 @@ import React from 'react'
 import { FaWallet } from "react-icons/fa6";
 import { GrTransaction } from "react-icons/gr";
 import { TbReportSearch } from "react-icons/tb";
+import { RiFundsLine } from "react-icons/ri";
+import { FaNairaSign } from "react-icons/fa6";
 
 
 
 
 
 
-function SideBar({tab}) {
+
+function SideBar({tab, onTab}) {
 
 
 
   return (
    <section className='h-screen w-[25%] bg-[--bg] flex  flex-col justify-between '>
-    <div className='flex items-center p-[20px]'>
+    <div className='flex justify-center p-[20px] flex-col gap-[5px]'>
         <h1 className='urba font-semibold text-[2rem]'>Scourge</h1>
+
+        <div className='flex items-center'>
+
+            <img src="" className='w-[40px] h-[40px] p-[10px] bg-white rounded-full' alt="" />
+            
+            <h2 className='urba px-[10px]'>Balance</h2>
+        </div>
     </div>
 
-    <ul className='flex flex-col gap-[10px] pop text-[1.2rem] px-[10px] h-[70vh]'>
-        <li className='px-[20px] hover:bg-[--white] py-[10px] rounded-[30px] cursor-pointer'>
-            <button className='outline-none flex items-center gap-[10px]'>
+    <ul className='flex flex-col gap-[10px] pop text-[1.1rem] px-[10px] h-[74vh]'>
+        <li onClick={() => onTab("fund")} className='px-[20px] hover:bg-[--white] py-[10px] rounded-[30px] cursor-pointer'>
+            <button  className='outline-none flex items-center gap-[10px]'>
                 <i className='text-[1.5rem]'>
-                    <FaWallet />
+                    <RiFundsLine />
                 </i>
-                <p>Balance</p>
+                <p>Fund Wallet</p>
             </button>
         </li>
         <li className='px-[20px] hover:bg-[--white] py-[10px] rounded-[30px] cursor-pointer'>
@@ -44,10 +54,6 @@ function SideBar({tab}) {
             </button>
         </li>
     </ul>
-
-    <figure className=''>
-        <img src="" className='w-[50px] h-[50px] p-[10px] bg-white rounded-full' alt="" />
-    </figure>
 
    </section>
   )
