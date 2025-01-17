@@ -43,7 +43,7 @@ function SideBar({tab, onTab}) {
                 <p>Fund Wallet</p>
             </button>
         </li>
-        <li className='px-[20px] hover:bg-[--white] py-[10px] rounded-[30px] cursor-pointer'>
+        <li onClick={() => onTab("trans")} className='px-[20px] hover:bg-[--white] py-[10px] rounded-[30px] cursor-pointer'>
             <button className='outline-none flex items-center gap-[10px]'>
                 <i className='text-[1.5rem]'>
                     <GrTransaction />

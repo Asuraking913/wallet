@@ -3,7 +3,9 @@ import { AiOutlineSend } from "react-icons/ai";
 import { MdCallReceived } from "react-icons/md";
 import { TbCurrencyNaira } from "react-icons/tb";
 import pay from "../assets/pay.png"
-
+import verve from "../assets/verve.png"
+import master from "../assets/master.png"
+import visa from "../assets/visa.png"
 
 function FundWallet() {
 
@@ -41,19 +43,16 @@ function FundWallet() {
 
             </div>
 
-            <section className='flex flex-col gap-[10px]'>
+            <section className='flex flex-col gap-[10px] relative'>
 
 
-              <h2 className='text-center urba text-[1.2rem] capitalize'>Fund Your Account with paystack payment Gateway</h2>
-
-
-              <section className='flex w-full '>
+              <h2 className='text-center urba text-[1.2rem] font-semibold capitalize'>Fund Your Account with paystack payment Gateway</h2>
 
                 <form action="" className='p-[20px]  rounded-[5px] bg-[--gray] flex flex-col gap-[20px] w-full'>
                 
                   <p>
                     <label htmlFor="amount"  className='urba'>Amount*</label>
-                    <input className='outline-none border-[--gray] rounded-[5px] border-[1px] block p-[10px] w-[60%] pop' type="number" name="amount" id="amount" />
+                    <input className='outline-none border-[--gray] rounded-[5px] border-[1px] block p-[10px] w-[60%] pop' type="number" min={0} step={1} name="amount" id="amount" />
                   </p>
                   <div className='flex items-center justify-between w-[60%]'>
                     <p htmlFor="amount"  className='urba'>Transaction Charge</p>
@@ -74,7 +73,7 @@ function FundWallet() {
                       <span>{charge}</span>
                     </p>
                   </div>
-                  <button className='w-[60%] text-[--white] p-[10px] bg-[--black] rounded-[2px] hover:opacity-90'>
+                  <button className='w-[60%] pop text-[--white] p-[10px] bg-[--black] rounded-[2px] hover:opacity-90'>
                     Continue To Funding
                   </button>
                   <div className='w-[60%] p-[10px] flex items-center justify-center'>
@@ -82,10 +81,17 @@ function FundWallet() {
                   </div>
                 </form>
 
+                <div className='absolute top-[15%] right-[10%] flex flex-col justify-center'>
+                  
+                    <h2 className='urba font-semibold text-center'>Accepted Cards</h2>
 
-              </section>
+                    <div className='flex w-[250px] flex-wrap gap-[10px] justify-center'>
+                      <img src={verve} className='w-[100px] object-cover' alt="" />
+                      <img src={master} className='w-[100px] object-cover ' alt="" />
+                      <img src={visa} className='w-[100px] object-cover' alt="" />
+                    </div>
 
-
+                </div>
             </section>
 
           </section>
