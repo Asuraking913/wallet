@@ -4,7 +4,7 @@ import DashboardBody from '../components/dashboardBody'
 
 function Home() {
 
-  const [tab, setTab] = useState("balance")
+  const [tab, setTab] = useState("fund")
 
 
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
-import { FaWallet } from "react-icons/fa6";
+import { useState } from 'react';
 import { GrTransaction } from "react-icons/gr";
 import { TbReportSearch } from "react-icons/tb";
 import { RiFundsLine } from "react-icons/ri";
-import { FaNairaSign } from "react-icons/fa6";
+import account from "../assets/account.png"
+
 
 
 
@@ -13,7 +14,7 @@ import { FaNairaSign } from "react-icons/fa6";
 
 function SideBar({tab, onTab}) {
 
-
+    const [balance, setBalance] = useState("2000")
 
   return (
    <section className='h-screen w-[25%] bg-[--bg] flex  flex-col justify-between '>
@@ -22,9 +23,14 @@ function SideBar({tab, onTab}) {
 
         <div className='flex items-center'>
 
-            <img src="" className='w-[40px] h-[40px] p-[10px] bg-white rounded-full' alt="" />
+            <img src={account}  className='w-[40px] p-[4px] bg-white rounded-full' alt="" />
             
-            <h2 className='urba px-[10px]'>Balance</h2>
+            <h2 className='urba px-[10px]'>
+                <span>Balance:</span>
+                <span className='ml-[5px]'>
+                    {balance}
+                </span>
+            </h2>
         </div>
     </div>
 

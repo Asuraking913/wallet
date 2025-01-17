@@ -11,7 +11,7 @@ function DashboardBody({tab}) {
     
 
   return (
-    <section className='h-screen w-full'>
+    <section className='h-screen w-full overflow-scroll hide-scrollbar'>
 {/* 
       {
         tab === "balance" &&
