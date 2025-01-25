@@ -18,11 +18,23 @@ function SubTransactions(items) {
                 {items.amount}
             </span>
         </li>
-        <li className='w-[150px]'>
-          {items.prevBalance}
+        <li className='w-[150px] flex items-center gap-[2px]'>
+            <span className='text-[1.1rem]'>
+                <TbCurrencyNaira />
+            </span>
+
+            <span>
+                {items.prevBalance}
+            </span>
         </li>
-        <li className='w-[150px]'>
-          {items.newBalance}
+        <li className='w-[150px] flex items-center gap-[2px]'>
+            <span className='text-[1.1rem]'>
+                <TbCurrencyNaira />
+            </span>
+
+            <span>
+                {items.newBalance}
+            </span>
         </li>
         <li className='w-[150px]'>
           {items.date}
