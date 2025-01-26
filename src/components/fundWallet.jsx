@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { AiOutlineSend } from "react-icons/ai";
 import { MdCallReceived } from "react-icons/md";
 import { TbCurrencyNaira } from "react-icons/tb";
@@ -12,15 +12,28 @@ import {useInterval} from "react-use"
 
 function FundWallet() {
 
+  // states
   const [charge, setCharge] = useState(0)
   const [email, setEmail] = useState("")
   const [amount, setAmount] = useState(0)
   const [error, setError] = useState("")
   const [redirectUrl, setRedirectUrl] = useState("")
 
+  // refs
+  const amountRef = useRef()
+  const emailRef = useRef()
+
+  
+
   useInterval(() => {
 
     if(redirectUrl) {
+      amountRef.current.value = "";
+      emailRef.current.value = "";
+
+      setAmount((prev) => "");
+      setEmail((prev) => "");
+
       window.location.href = redirectUrl
     }
 
@@ -47,10 +60,6 @@ function FundWallet() {
         if(response.status === 200) {
           setRedirectUrl(prev => response.data.data.data.link)
           console.log(response.data)
-
-          setAmount((prev) => "");
-          setEmail(prev => "")
-          setRedirectUrl(prev => "")
           return
         }
         
@@ -110,6 +119,7 @@ function FundWallet() {
               Amount*
             </label>
             <input
+            ref={amountRef}
               className="outline-none border-[--gray] rounded-[5px] border-[1px] block p-[10px] w-[60%] pop"
               type="number"
               onChange={(e) => setAmount(e.target.value)}
@@ -124,6 +134,7 @@ function FundWallet() {
               Email*
             </label>
             <input
+            ref={emailRef}
               className="outline-none border-[--gray] rounded-[5px] border-[1px] block p-[10px] w-[60%] pop"
               onChange={(e) => setEmail(e.target.value)}
               type="email"
